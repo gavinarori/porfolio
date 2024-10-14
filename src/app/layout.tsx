@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "@/components/ui/theme-provider"
 import localFont from "next/font/local";
 import "./globals.css";
+import Image from "next/image";
+import { FollowerPointerCard } from "@/components/ui/following-pointer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,8 +31,52 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+             <FollowerPointerCard
+        title={
+          <TitleComponent
+            title="Gavin Arori"
+            avatar="https://avatars.githubusercontent.com/u/99688077?v=4"
+          />
+        }
+      >
+      
+            {children}
+
+            </FollowerPointerCard>
+
+          </ThemeProvider>
       </body>
     </html>
   );
 }
+
+const TitleComponent = ({
+  title,
+  avatar,
+}: {
+  title: string;
+  avatar: string;
+}) => {
+  return(
+    <div className="flex space-x-2 items-center">
+    <Image
+      src={avatar}
+      height="20"
+      width="20"
+      alt="thumbnail"
+      className="rounded-full border-2 border-white"
+    />
+    <p>{title}</p>
+  </div>
+  )
+}
+  
+
+
+
