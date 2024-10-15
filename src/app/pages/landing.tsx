@@ -4,7 +4,7 @@ import AnimatedGridPattern from "@/components/ui/animated-grid-pattern";
 export function LandingPage() {
   return (
     <div className="relative flex h-[500px] w-full items-center justify-center overflow-hidden  bg-background p-20 ">
-      <p className="z-10 whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
+      <p className=" whitespace-pre-wrap text-center text-5xl font-medium tracking-tighter text-black dark:text-white">
         Animated Grid Pattern
       </p>
       <AnimatedGridPattern

@@ -17,6 +17,7 @@ const Circle = forwardRef<
         className,
       )}
     >
+      
       {children}
     </div>
   );
@@ -41,12 +42,16 @@ export function AnimatedBeamMultipleOutputDemo({
   return (
     <div
       className={cn(
-        "relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg border bg-background p-10 md:shadow-xl",
+        "relative flex h-[500px] w-full flex-col items-center justify-center overflow-hidden  bg-background  ",
         className,
       )}
       ref={containerRef}
     >
-      <div className="flex size-full max-w-lg flex-row items-stretch justify-between gap-10">
+       <span className="absolute pointer-events-none pb-12 whitespace-pre-wrap bg-gradient-to-b from-black to-gray-300/80 bg-clip-text text-center text-8xl font-semibold leading-none text-transparent dark:from-white dark:to-slate-900/10">
+        Tech stack
+      </span>
+      <div className=" absolute flex size-full max-w-lg flex-row items-stretch justify-between ">
+        
         <div className="flex flex-col justify-center">
           <Circle ref={div7Ref}>
             <Icons.user />
@@ -113,6 +118,7 @@ export function AnimatedBeamMultipleOutputDemo({
         toRef={div7Ref}
         duration={3}
       />
+      
     </div>
   );
 }
